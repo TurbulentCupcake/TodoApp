@@ -3,7 +3,7 @@ This is a task management app that will learn from your task completion abilitie
 
 ## Objectives
 
-Existing task management applications are often means to be a "one size fits all" kind of applciation. 
+Existing task management applications are often means to be a "one size fits all" kind of application. 
 Here, I aim to create a task management application that is much more customizable and smart. 
 
 It has all the similar features as we expect in usual task management applications. A few are : 
@@ -16,10 +16,10 @@ It has all the similar features as we expect in usual task management applicatio
 
 I intend to integrate extra features such as the following:
 * Automatic text parsing : It will read the text and make suggestions
-	* Eg: If you type "Remind me to call Joe": It will parse it and create a reminder with a phone number
+	* e.g. If you type "Remind me to call Joe": It will parse it and create a reminder with a phone number
 * Complete integration with Google Calendar. 
 	* All tasks that are meant to be done at a certain time are added as a calendar entry
-	* Eg: If you make a reminder to "attend meeting at 5pm" It will automatically create that entry into the calendar. 
+	* e.g. If you make a reminder to "attend meeting at 5pm" It will automatically create that entry into the calendar. 
 * Smart Tasking
 	* By watching how you complete tasks, it will learn from your task completion schedule and your task completion rate, it will predict how many tasks you can complete in the next week and what is realisitc. 
 * Project based analytics : Based on the project that you have, it will make suggestions and recommendation that will help you get your work done faster. 
