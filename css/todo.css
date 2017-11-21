@@ -76,15 +76,23 @@ ul li.checked::before  {
 
 .priority { 
 	position: absolute;
-	right: 44px;
+	right: 43px;
 	top:0;
 	padding: 12px 16px 12px 16px;
  }
 
  .priority:hover { 
- 	background-color: #18BA26;
+ 	background-color: #16302F;
  	color: white;
   }
+
+ .priorityoptions { 
+ 	display: block;
+ 	position: relative;
+ 	padding: 12px 16px 12px 16px;
+  }
+
+
 
 
 /* style the header */
