@@ -74,6 +74,19 @@ ul li.checked::before  {
 	color: white;
  }
 
+.priority { 
+	position: absolute;
+	right: 44px;
+	top:0;
+	padding: 12px 16px 12px 16px;
+ }
+
+ .priority:hover { 
+ 	background-color: #18BA26;
+ 	color: white;
+  }
+
+
 /* style the header */
 .header { 
 	background-color: #5A57BA;

@@ -49,6 +49,15 @@ function newElement() {
 	// null out the input when a new element has been added
 	document.getElementById("myInput").value = "";
 
+	// create another span element for priority
+	var span_two = document.createElement("SPAN");
+	// add a letter P for priority
+	var txt_two = document.createTextNode("P");
+	// add this new element as a child to the main span element
+	span_two.appendChild(txt_two);
+	// give it a class name
+	span_two.className = "priority"
+
 	// create a new span element for the new list element
 	var span = document.createElement("SPAN");
 	// add the "Cross" symbol for this new element
@@ -57,8 +66,9 @@ function newElement() {
 	span.appendChild(txt);
 	span.className = "close";
 	// append the span to the list element
+	li.appendChild(span_two)
 	li.appendChild(span)
-
+	
 	// initialize close on all buttons again
 	for(i = 0; i < close.length; i++) { 
 		close[i].onclick =  function() { 
