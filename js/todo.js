@@ -58,6 +58,28 @@ function newElement() {
 	// give it a class name
 	span_two.className = "priority"
 
+	// when the user clicks on the priority button,
+	// display the three possible levels of priority
+	span_two.onclick = function() { 
+		// if no priority is set, then set the first priority
+		// as the lowest
+		var ele = span_two.currentStyle || getComputedStyle(span_two, null);
+		var bgcol = rgbToHex(String(ele.backgroundColor));
+		console.log(bgcol)
+
+		if(bgcol === "0x16302f") { 
+			span_two.style.backgroundColor = "#09ba36"
+		} else if (bgcol == "0x09ba36") {
+			span_two.style.backgroundColor = "#fff920"
+		} else if (bgcol == "0xfff920") { 
+			span_two.style.backgroundColor = "#ff150b"
+ 		} else if (bgcol == "0xff150b") {
+			span_two.style.backgroundColor = "#09ba36"
+ 		}
+	}
+
+
+
 	// create a new span element for the new list element
 	var span = document.createElement("SPAN");
 	// add the "Cross" symbol for this new element
@@ -94,4 +116,32 @@ function closeNav() {
 	document.getElementById("mySidenav").style.width = "0";
 	document.getElementById("main").style.marginLeft = "0";
 
+}
+
+function getStyle(el, styleProp) {
+   if (el.currentStyle)
+      var y = el.currentStyle[styleProp];
+   else if (window.getComputedStyle)
+      var y = document.defaultView.getComputedStyle(el, null).getPropertyValue(styleProp);
+   return y;
+}  
+
+
+function componentFromStr(numStr, percent) {
+    var num = Math.max(0, parseInt(numStr, 10));
+    return percent ?
+        Math.floor(255 * Math.min(100, num) / 100) : Math.min(255, num);
+}
+
+function rgbToHex(rgb) {
+    var rgbRegex = /^rgb\(\s*(-?\d+)(%?)\s*,\s*(-?\d+)(%?)\s*,\s*(-?\d+)(%?)\s*\)$/;
+    var result, r, g, b, hex = "";
+    if ( (result = rgbRegex.exec(rgb)) ) {
+        r = componentFromStr(result[1], result[2]);
+        g = componentFromStr(result[3], result[4]);
+        b = componentFromStr(result[5], result[6]);
+
+        hex = "0x" + (0x1000000 + (r << 16) + (g << 8) + b).toString(16).slice(1);
+    }
+    return hex;
 }
