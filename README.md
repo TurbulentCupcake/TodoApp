@@ -24,3 +24,7 @@ I intend to integrate extra features such as the following:
 	* By watching how you complete tasks, it will learn from your task completion schedule and your task completion rate, it will predict how many tasks you can complete in the next week and what is realisitc. 
 * Project based analytics : Based on the project that you have, it will make suggestions and recommendation that will help you get your work done faster. 
 * Any place where you can enter any kind of information about your project will be used to provide smart information that will help get your work done faster. 
+* Just a note, the following indicate priority levels
+	* green = low priority
+	* yellow = medium priorty
+	* red = high priority
