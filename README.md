@@ -28,3 +28,6 @@ I intend to integrate extra features such as the following:
 	* green = low priority
 	* yellow = medium priorty
 	* red = high priority
+* Difficulty levels for tasks
+	* Range of 1-5 for information on scheduling difficult tasks to longer periods of time
+	
