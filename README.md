@@ -30,4 +30,4 @@ I intend to integrate extra features such as the following:
 	* red = high priority
 * Difficulty levels for tasks
 	* Range of 1-5 for information on scheduling difficult tasks to longer periods of time
-	
+* If you have a task that is related to grocery or purchase, alert the user if they are near a store where the item is available.	
