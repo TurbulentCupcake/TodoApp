@@ -1,15 +1,13 @@
-<!DOCTYPE HTML>
+{% load static %}
+<!DOCTYPE html>
 <html>
 <!-- Defining head -->
 
 <head>
   <title> TodoApp </title>
-  <meta charset="UTF-8" />
   <!--favicon--><link rel="icon" type="image/png" href="https://i.imgur.com/FSD8rZ8.png">
-  <!--todo app css--><link rel="stylesheet" type="text/css" href="css/todo.css">
   <!--bootstrap css--><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
-  <!--jqery--><script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <!--todo app js--><script type="text/javascript" src="js/todo.js"></script> 
+  <!--todo app css--><link rel="stylesheet" type="text/css" href="{% static 'frontend/todo.css' %}">
 </head>
 
 <body>
@@ -35,6 +33,7 @@
       <div id="navBar"></div>
     </div>
 
+    <!-- 	<span onclick="openNav()" id="openNavMenu">Menu</span> -->
     <h2> My To Do List </h2>
     <input type="text" id="myInput" placeholder="Title...">
     <span onclick="newElement()" class="addBtn">Add</span>
@@ -42,10 +41,15 @@
 
   <!-- create a simple list of stuff to do  -->
   <ul id="myUL">
-    <!-- Dont add anything here prior to launching aoo
-    / it doesnt reflect changes for some reason -->
+    <li> Hit the gym </li>
+    <li class="checked"> Pay the bills </li>
+    <li> Meet George </li>
+    <li> Buy eggs </li>
+    <li> Read a book </li>
+    <li> Organize office </li>
   </ul>
 
+  <script type="text/javascript" src="{% static 'frontend/todo.js' %}"></script>
 
 </body>
 
