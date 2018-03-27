@@ -45,6 +45,17 @@ function newElement() {
 	} else {
 		// if the input isnt null, then add this new lisst element to the list of tasks
 		document.getElementById("myUL").appendChild(li);
+
+		// create new XMLHttpRequest object
+		var request =  new XMLHttpRequest();
+		request.open('GET', 'http://127.0.0.1:8080/addTask')
+		var data = JSON.stringify({
+			"task":inputValue
+		})
+
+		// send data to database
+		request.send(data);
+
 	}
 	// null out the input when a new element has been added
 	document.getElementById("myInput").value = "";
