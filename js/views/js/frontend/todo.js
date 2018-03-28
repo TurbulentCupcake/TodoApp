@@ -35,7 +35,7 @@ function newElement() {
 	var li = document.createElement("li");
 	// get the value of the input
 	var inputValue = document.getElementById("myInput").value;
-	console.log(inputValue);
+	//console.log(inputValue);
 	// create a text node with this input
 	var t =  document.createTextNode(inputValue);
 	// add this value to the list element

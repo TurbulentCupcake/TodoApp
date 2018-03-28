@@ -1,8 +1,30 @@
+
+const mysql = require('mysql');
 const express = require('express');
 const app = express();
 
 host = 'localhost';
 port = 8000;
+
+
+
+// create a database connection
+const db = mysql.createConnection({
+	host : 'localhost',
+	user : 'adithya',
+	password : 'Sanjay01*',
+	database : 'tododev_app'
+})
+
+
+// connect ot the database
+db.connect((err) => {
+	if(err) {
+		throw err;
+	}
+	console.log('MySql database connected .. ');
+})
+
 
 app.use(express.json()); // activate json parsing 
 app.use(express.static('/home/adithya/Projects/TodoApp/js/scripts'));
@@ -14,24 +36,23 @@ app.get('/',(req, res)=>{
 })
 
 // add task : display the added task to the console
+// add the task to the database
 app.post('/addTask', (req, res)=>{
-	console.log(req.body);
+	
+	// print the task entered into the log
+	console.log(req.body.task);
+
+	// add the post into the database
+	let sql = 'INSERT INTO frontend_tasks (task)  VALUES (\"'+req.body.task+'\");';
+	let query = db.query(sql, (err, result)=>{
+		if (err) throw err;
+		console.log(result);
+		res.send('task has been added to database');
+	})
+
 })
 
 
 app.listen(port);
 
 console.log("Running at port " + port);
-
-
-/*// render the css and js page
-app.get('/todo.js', (req, res)=>{
-	res.sendFile('../frontend/todo.js');
-})
-
-// rend the css file
-app.get('/todo.css', (req,res)=>{
-	res.sendFile('../frontend/todo.css');
-})
-
-*/
