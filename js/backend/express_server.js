@@ -13,6 +13,10 @@ app.get('/',(req, res)=>{
 	res.sendFile('index.html');
 })
 
+// add task : display the added task to the console
+app.post('/addTask', (req, res)=>{
+	console.log(req.body);
+})
 
 
 app.listen(port);

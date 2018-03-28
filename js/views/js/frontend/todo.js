@@ -35,6 +35,7 @@ function newElement() {
 	var li = document.createElement("li");
 	// get the value of the input
 	var inputValue = document.getElementById("myInput").value;
+	console.log(inputValue);
 	// create a text node with this input
 	var t =  document.createTextNode(inputValue);
 	// add this value to the list element
@@ -48,12 +49,13 @@ function newElement() {
 
 		// create new XMLHttpRequest object
 		var request =  new XMLHttpRequest();
-		request.open('GET', 'http://127.0.0.1:8080/addTask')
+		request.open('POST', 'http://localhost:8000/addTask', true);
+		request.setRequestHeader('Content-type', 'application/json');
 		var data = JSON.stringify({
 			"task":inputValue
 		})
 
-		// send data to database
+		// send data to backend
 		request.send(data);
 
 	}
