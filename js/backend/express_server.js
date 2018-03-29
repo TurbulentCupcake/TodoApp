@@ -47,8 +47,22 @@ app.post('/addTask', (req, res)=>{
 	let query = db.query(sql, (err, result)=>{
 		if (err) throw err;
 		console.log(result);
-		res.send('task has been added to database');
+		res.send(JSON.stringify({
+				"id": result.insertId
+		}));
 	})
+
+})
+
+// delete task from the database
+// removes the task when user hits the cross button on the side of the 
+// pane -- ideally we would like to store the deleted tasks elsewhere because
+// the user would like to check their list of archives somewhere later
+
+app.delete('/deletetask', (req,res)=>{
+
+	console.log()
+
 
 })
 

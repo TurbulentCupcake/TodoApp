@@ -1,3 +1,9 @@
+
+var current_user_tasks = [];
+
+
+
+
 // Create a "close" button and append it to each list item
 var myNodelist = document.getElementsByTagName("LI");
 var i;
@@ -49,16 +55,38 @@ function newElement() {
 
 		// create new XMLHttpRequest object
 		var request =  new XMLHttpRequest();
+
+		// get a request back with the id
+		// onreadystatechange waits for the state change to see
+		// if we have finally recieved the data from the server
+		// after which it will execute the code inside the function
+		request.onreadystatechange = function() {
+			if(request.readyState == XMLHttpRequest.DONE){
+				var response = JSON.parse(request.responseText);
+				console.log('This id of the task is ' + response.id);
+				current_user_tasks.push({
+					"id":response.id,
+					"task": inputValue
+				});
+				
+			}
+		}
+
 		request.open('POST', 'http://localhost:8000/addTask', true);
 		request.setRequestHeader('Content-type', 'application/json');
 		var data = JSON.stringify({
 			"task":inputValue
-		})
+		});
 
 		// send data to backend
 		request.send(data);
 
+		console.log(current_user_tasks);
+	
+
 	}
+
+	
 	// null out the input when a new element has been added
 	document.getElementById("myInput").value = "";
 
