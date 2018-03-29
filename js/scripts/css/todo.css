@@ -91,9 +91,9 @@ ul li.checked::before  {
  }
 
 /* style the input */
-input { 
+input  { 
 	border: none;
-	width: 75%;
+	width: 20%;
 	padding: 10px;
 	float: left;
 	font-size: 16px;
@@ -166,4 +166,30 @@ input {
 	    height: 5px;
 	    background-color: white;
 	    margin: 6px 0;
+ }
+
+ #calendar.accordion {
+	 background-color: #818181;
+	 color: #555;
+	 cursor: pointer;
+	 text-align: center;
+	 color: #f1f1f1;
+	 padding: 10px;
+	 position: relative;
+	 font-size: 16px;
+	 width :5%;
+	 top: 0px;
+	 float: left;
+
+ }
+
+ #calendarpanel {
+	padding:0 18px;
+	background-color: #bbb;
+	color: black;
+	height: 0px;
+	width: 100%;
+	overflow: hidden;
+	transition: height 0.1s ease-out;
+
  }

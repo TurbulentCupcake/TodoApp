@@ -33,6 +33,23 @@ list.addEventListener("click", function(ev) {
 	}
 }, false);
 
+
+// creates a dropdown effect to reveal the calendar and select a date
+	document.getElementById('calendar')
+				.addEventListener("click", function(){
+			var panel = document.getElementById('calendarpanel');
+			if(panel.style.getPropertyValue('height') != '0px'){
+				panel.style.setProperty('height','0px');
+			} else {
+				panel.style.setProperty('height','100px');
+			}
+	});
+
+
+
+
+
+
 // create a new element when the "Add" button is clicked
 function newElement() { 
 
@@ -124,5 +141,4 @@ function closeNav() {
 
 	document.getElementById("mySidenav").style.width = "0";
 	document.getElementById("main").style.marginLeft = "0";
-
 }
