@@ -57,7 +57,7 @@ app.post('/addTask', (req, res)=>{
 // delete task from the database
 // removes the task when user hits the cross button on the side of the 
 // pane -- ideally we would like to store the deleted tasks elsewhere because
-// the user would like to check their list of archives somewhere later
+// the user would like to check their list of archives
 
 app.delete('/deletetask', (req,res)=>{
 

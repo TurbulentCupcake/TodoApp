@@ -75,7 +75,7 @@ var vanillaCalendar = {
         picked.innerHTML = this.dataset.calendarDate
         _this.removeActiveClass()
         this.classList.add('vcal-date--selected')
-      })
+      })  
     }
   },
 

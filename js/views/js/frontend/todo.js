@@ -39,15 +39,15 @@ list.addEventListener("click", function(ev) {
 
 
 // creates a dropdown effect to reveal the calendar and select a date
-	document.getElementById('calendar')
-				.addEventListener("click", function(){
-			var panel = document.getElementById('calendarpanel');
-			if(panel.style.getPropertyValue('height') != '0px'){
-				panel.style.setProperty('height','0px');
-			} else {
-				panel.style.setProperty('height','313px');
-			}
-	});
+document.getElementById('calendar')
+			.addEventListener("click", function(){
+		var panel = document.getElementById('calendarpanel');
+		if(panel.style.getPropertyValue('height') != '0px'){
+			panel.style.setProperty('height','0px');
+		} else {
+			panel.style.setProperty('height','313px');
+		}
+});
 
 
 
@@ -62,6 +62,9 @@ function newElement() {
 	var li = document.createElement("li");
 	// get the value of the input
 	var inputValue = document.getElementById("myInput").value;
+	// get the date selected by the user
+	var selected_date = document.getElementById("calendar").innerHTML;
+
 	//console.log(inputValue);
 	// create a text node with this input
 	var t =  document.createTextNode(inputValue);
@@ -84,10 +87,11 @@ function newElement() {
 		request.onreadystatechange = function() {
 			if(request.readyState == XMLHttpRequest.DONE){
 				var response = JSON.parse(request.responseText);
-				console.log('This id of the task is ' + response.id);
+				console.log('This id of the task is ' + response.id + ' the date selected is ' + selected_date);
 				current_user_tasks.push({
 					"id":response.id,
-					"task": inputValue
+					"task": inputValue,
+					"date": selected_date
 				});
 				
 			}
@@ -96,7 +100,8 @@ function newElement() {
 		request.open('POST', 'http://localhost:8000/addTask', true);
 		request.setRequestHeader('Content-type', 'application/json');
 		var data = JSON.stringify({
-			"task":inputValue
+			"task":inputValue,
+			"date": selected_date
 		});
 
 		// send data to backend
