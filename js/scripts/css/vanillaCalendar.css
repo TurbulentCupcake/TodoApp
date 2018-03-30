@@ -39,7 +39,7 @@
   text-align: center;
   &:active {
     border-radius: var(--vcal-border-radius);
-    box-shadow: 0 0 0 2px rgba(var(--vcal-today-bg-color), 0.1)
+    box-shadow: 0 0 0 2px rgba(var(--vcal-today-bg-color), 0.1);
   }
 }
 
@@ -98,7 +98,8 @@
 }
 
 #v-cal .vcal-date--today {
-  background-color: var(--vcal-today-bg-color);
+  /* background-color: var(--vcal-today-bg-color); */
+  background-color: #5A57BA;
   color: var(--vcal-today-color);
 }
 

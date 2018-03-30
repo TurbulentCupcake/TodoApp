@@ -2,7 +2,9 @@
 var current_user_tasks = [];
 
 window.addEventListener('load', function () {
-	vanillaCalendar.init();
+	vanillaCalendar.init({
+		disablePastDays: true
+	});
   })
 
 
@@ -43,7 +45,7 @@ list.addEventListener("click", function(ev) {
 			if(panel.style.getPropertyValue('height') != '0px'){
 				panel.style.setProperty('height','0px');
 			} else {
-				panel.style.setProperty('height','500px');
+				panel.style.setProperty('height','313px');
 			}
 	});
 

@@ -184,7 +184,7 @@ input  {
  }
 
  #calendarpanel {
-	padding:0 18px;
+	/* padding:0 18px; */
 	background-color: #bbb;
 	color: black;
 	height: 0px;
