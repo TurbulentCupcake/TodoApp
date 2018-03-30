@@ -1,7 +1,9 @@
 
 var current_user_tasks = [];
 
-
+window.addEventListener('load', function () {
+	vanillaCalendar.init();
+  })
 
 
 // Create a "close" button and append it to each list item
@@ -41,7 +43,7 @@ list.addEventListener("click", function(ev) {
 			if(panel.style.getPropertyValue('height') != '0px'){
 				panel.style.setProperty('height','0px');
 			} else {
-				panel.style.setProperty('height','100px');
+				panel.style.setProperty('height','500px');
 			}
 	});
 
