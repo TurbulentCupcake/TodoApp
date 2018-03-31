@@ -6,25 +6,34 @@
   <title> TodoApp </title>
   <!--favicon--><link rel="icon" type="image/png" href="https://i.imgur.com/FSD8rZ8.png">
   <!--bootstrap css--><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
-  <!--todo app css--><link rel="stylesheet" type="text/css" href="/todo.css">
+  <!--todo app css--><link rel="stylesheet" type="text/css" href="css/todo.css">
+  <!--todo app css--><link rel="stylesheet" type="text/css" href="css/overlay.css">
 </head>
 
 <body>
 
   <!-- code to create a side menu with options -->
-  <div id="mySidenav" class="sidenav">
-
+  <!-- <div id="mySidenav" class="overlay sidenav">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
     <a href="#"> Projects </a>
     <a href="#"> All Tasks </a>
     <a href="#"> Due Today </a>
     <a href="#"> Due This Week </a>
-  </div>
+  </div> -->
 
   <!-- create the menu opening event -->
 
   <!-- Specifying the header of the div element -->
   <div id='myDIV' class='header'>
+  <div id="mySidenav" class="overlay">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <div class="overlay-content">
+      <a href="https://matthewwolff.github.io/">Projects</a>
+      <a href="https://matthewwolff.github.io/about/">All Tasks</a>
+      <a href="https://matthewwolff.github.io/resume/">Due Today</a>
+      <a href="https://github.com/matthewwolff/">Due This Week</a>
+    </div>
+  </div>
 
     <div onclick="openNav()" id="openNavMenu">
       <div id="navBar"></div>
@@ -34,7 +43,7 @@
 
     <!-- 	<span onclick="openNav()" id="openNavMenu">Menu</span> -->
     <h2> My To Do List </h2>
-      <input type="text" id="myInput" placeholder="Title...">
+      <input style="color: black" type="text" id="myInput" placeholder="Title...">
       <span onclick="newElement()" class="addBtn">Add</span>
   </div>
 
@@ -48,7 +57,7 @@
     <li> Organize office </li>
   </ul>
 
-  <script type="text/javascript" src="/todo.js"></script>
+  <script type="text/javascript" src="js/todo.js"></script>
 
 </body>
 
