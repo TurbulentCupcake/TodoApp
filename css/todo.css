@@ -1,0 +1,195 @@
+/* Include the padding and border in an element's total width a d height */
+* {
+	box-sizing: border-box;
+}
+
+/* Remove margins and padding from the list */
+ul { 
+
+	margin: 0;
+	padding: 0;
+ }
+
+ul li {
+
+	cursor: pointer;
+	position: relative;
+	padding: 12px 8px 12px 40px;
+	background: #eee;
+	font-size: 18px;
+	transition: 0.2s;
+
+	/* make the list items unselectable */
+	/* this just makes sure that the text cannot be accidentally copied */
+	-webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+}
+
+ul li:nth-child(odd) { 
+	background: #f9f9f9;
+ }
+
+/* change the back ground color when hovered over. */
+ul li:hover { 
+	background: #ddd;
+ }
+
+ /* when clicked on, add a background color and strike out the text*/
+ ul li.checked { 
+ 	background: #888;
+ 	color: #fff;
+ 	text-decoration:  line-through;
+  }
+
+ul li.checked::before  {
+
+	content: '';
+	position: absolute;
+	border-color: #fff;
+	border-style: solid;
+	border-width: 0px 2px 2px 0px;
+	top: 10px;
+	left: 16px;
+	transform: rotate(45deg);
+	height: 15px;
+	width: 7px;
+
+
+}
+
+/* style the close button */
+.close { 
+	position: absolute;
+	right: 0;
+	top: 0;
+	padding: 12px 16px 12px 16px;
+ }
+
+/*  what happens when you ohover over the close button */
+.close:hover { 
+	background-color: #f44336;
+	color: white;
+ }
+
+/* style the header */
+.header { 
+	background-color: #5A57BA;
+	padding: 30px 40px;
+	color: white;
+	text-align: center;
+ }
+
+/* clear floats after the header */
+.header:after { 
+	 content: "";
+	 display: table;
+	 clear: both;
+
+ }
+
+/* style the input */
+input  { 
+	border: none;
+	width: 20%;
+	padding: 10px;
+	float: left;
+	font-size: 16px;
+ }
+
+/* style the add button */
+.addBtn { 
+	padding: 10px;
+	width: 25%;
+	background: #d9d9d9;
+	color: #555;
+	float: left;
+	text-align: center;
+	font-size: 16px;
+	cursor: pointer;
+	transition: 0.3s;
+ }
+
+ .addBtn:hover { 
+ 	background-color: #bbb;
+  }
+
+.sidenav {
+
+	height: 100%;
+	width: 0;
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	background-color: #111;
+	overflow-x: hidden;
+	padding-top: 60px;
+	transition: 0.5s;
+}
+
+.sidenav a { 
+
+	padding: 8px 8px 8px 32px;
+	text-decoration: none;
+	font-size: 25px;
+	color: #818181;
+	display: block;
+	transition: 0.3s;
+ }
+
+.sidenav a:hover, .offcanvas a:focus {
+	color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+	position: absolute;
+	top: 0;
+	right: 25px;
+	font-size: 36px;
+	margin-left: 50px;
+}
+
+.header #openNavMenu {
+	position: absolute;
+	left:25px;
+	top:20px;
+	cursor: pointer;
+
+
+}
+
+.header #navBar { 
+	width: 35px;
+	    height: 5px;
+	    background-color: white;
+	    margin: 6px 0;
+ }
+
+ #calendar.accordion {
+	 background-color: #818181;
+	 color: #555;
+	 cursor: pointer;
+	 text-align: center;
+	 color: #f1f1f1;
+	 padding: 10px;
+	 position: relative;
+	 font-size: 16px;
+	 width :5%;
+	 top: 0px;
+	 float: left;
+
+ }
+
+ #calendarpanel {
+	/* padding:0 18px; */
+	background-color: #bbb;
+	color: black;
+	height: 0px;
+	width: 100%;
+	overflow: hidden;
+	transition: height 0.1s ease-out;
+
+ }
