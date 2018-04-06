@@ -72,7 +72,7 @@ var vanillaCalendar = {
         var picked = document.querySelectorAll(
           '[data-calendar-label="picked"]'
         )[0]
-        picked.innerHTML = this.dataset.calendarDate
+        picked.setAttribute("date-value",this.dataset.calendarDate);
         _this.removeActiveClass()
         this.classList.add('vcal-date--selected')
       })  

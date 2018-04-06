@@ -40,13 +40,15 @@ app.get('/',(req, res)=>{
 app.post('/addTask', (req, res)=>{
 	
 	// print the task entered into the log
-	console.log(req.body.task);
+	//console.log(req.body.task);
+	//console.log(req.body);
 
 	// add the post into the database
-	let sql = 'INSERT INTO frontend_tasks (task)  VALUES (\"'+req.body.task+'\");';
+	let sql = 'INSERT INTO frontend_tasks (task,datestring) VALUES (\"'+req.body.task+'\",\"'+req.body.date+'\");';
 	let query = db.query(sql, (err, result)=>{
 		if (err) throw err;
-		console.log(result);
+	//	console.log(result);
+		// send back the id in order to perform deletion
 		res.send(JSON.stringify({
 				"id": result.insertId
 		}));

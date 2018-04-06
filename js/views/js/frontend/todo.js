@@ -1,5 +1,6 @@
 
 var current_user_tasks = [];
+var priority_setting = 1; // 1 to 5, 1 being lowest and 5 being highest
 
 window.addEventListener('load', function () {
 	vanillaCalendar.init({
@@ -45,12 +46,42 @@ document.getElementById('calendar')
 		if(panel.style.getPropertyValue('height') != '0px'){
 			panel.style.setProperty('height','0px');
 		} else {
+			document.getElementById('prioritypanel').style.setProperty('height','0px');
 			panel.style.setProperty('height','313px');
 		}
 });
 
+// creates a dropdown effect to reveal the priority box and select a priority 
+document.getElementById('priority').addEventListener("click", function(){
+	var panel = document.getElementById('prioritypanel');
+	if(panel.style.getPropertyValue('height') != '0px') {
+	 	panel.style.setProperty('height', '0px');
+	} else {
+		document.getElementById('calendarpanel').style.setProperty('height','0px');
+		panel.style.setProperty('height','313px');
+	}
+});
 
 
+// make the priority boxes sectable and priority settable
+var priority_options = document.getElementsByClassName('priorityoption');
+for(i = 0; priority_options.length; i++) {
+	priority_options[i].addEventListener("click" , function() {
+		if(priority_options[i].getAttribute('id') == 'p1') {
+			priority_setting = 1;
+		} else if(priority_options[i].getAttribute('id') == 'p2'){
+			priority_setting = 2;
+		} else if(priority_options[i].getAttribute('id') == 'p3'){
+			priority_setting = 3;
+		} else if(priority_options[i].getAttribute('id') == 'p4') {
+			priority_setting = 4;
+		} else if(priority_options[i].getAttribute('id') == 'p5') {
+			priority_setting = 5;
+		} else {
+			priority_setting = 1;
+		}
+	});
+}
 
 
 
@@ -63,7 +94,7 @@ function newElement() {
 	// get the value of the input
 	var inputValue = document.getElementById("myInput").value;
 	// get the date selected by the user
-	var selected_date = document.getElementById("calendar").innerHTML;
+	var selected_date = document.getElementById("calendar").getAttribute("date-value");
 
 	//console.log(inputValue);
 	// create a text node with this input
@@ -87,27 +118,29 @@ function newElement() {
 		request.onreadystatechange = function() {
 			if(request.readyState == XMLHttpRequest.DONE){
 				var response = JSON.parse(request.responseText);
-				console.log('This id of the task is ' + response.id + ' the date selected is ' + selected_date);
+				//console.log('This id of the task is ' + response.id + ' the date selected is ' + selected_date);
 				current_user_tasks.push({
 					"id":response.id,
 					"task": inputValue,
-					"date": selected_date
+					"date": selected_date,
+					"priority" : priority_setting
 				});
 				
 			}
 		}
-
+		console.log(priority_setting);
 		request.open('POST', 'http://localhost:8000/addTask', true);
 		request.setRequestHeader('Content-type', 'application/json');
 		var data = JSON.stringify({
 			"task":inputValue,
-			"date": selected_date
+			"date": selected_date,
+			"priority": priority_setting
 		});
 
 		// send data to backend
 		request.send(data);
 
-		console.log(current_user_tasks);
+		//console.log(current_user_tasks);
 	
 
 	}
