@@ -65,7 +65,8 @@ document.getElementById('priority').addEventListener("click", function(){
 
 // make the priority boxes sectable and priority settable
 var priority_options = document.getElementsByClassName('priorityoption');
-for(i = 0; priority_options.length; i++) {
+console.log(priority_options[0].getAttribute('id'));
+for(let i = 0; i < priority_options.length; i++) {
 	priority_options[i].addEventListener("click" , function() {
 		if(priority_options[i].getAttribute('id') == 'p1') {
 			priority_setting = 1;
@@ -118,7 +119,8 @@ function newElement() {
 		request.onreadystatechange = function() {
 			if(request.readyState == XMLHttpRequest.DONE){
 				var response = JSON.parse(request.responseText);
-				//console.log('This id of the task is ' + response.id + ' the date selected is ' + selected_date);
+				console.log('This id of the task is ' + response.id + ' the date selected is ' + selected_date + ' with the selected priority being ' + 
+							priority_setting);
 				current_user_tasks.push({
 					"id":response.id,
 					"task": inputValue,

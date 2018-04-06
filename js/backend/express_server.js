@@ -41,10 +41,11 @@ app.post('/addTask', (req, res)=>{
 	
 	// print the task entered into the log
 	//console.log(req.body.task);
-	//console.log(req.body);
+	console.log(req.body);
 
 	// add the post into the database
-	let sql = 'INSERT INTO frontend_tasks (task,datestring) VALUES (\"'+req.body.task+'\",\"'+req.body.date+'\");';
+	let sql = 'INSERT INTO frontend_tasks (task,datestring,priority) VALUES (\"'+req.body.task+'\",\"'+req.body.date+'\",'+
+									req.body.priority+');';
 	let query = db.query(sql, (err, result)=>{
 		if (err) throw err;
 	//	console.log(result);
