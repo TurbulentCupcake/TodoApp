@@ -81,8 +81,14 @@ for(let i = 0; i < priority_options.length; i++) {
 		} else {
 			priority_setting = 1;
 		}
+
+		document.getElementById('priority').style.setProperty('background-color', 
+				priority_options[i].style.getPropertyValue('background-color'));
+		document.getElementById('priority').innerHTML = priority_options[i].getAttribute('id').toUpperCase();
 	});
 }
+
+
 
 
 
@@ -158,7 +164,10 @@ function newElement() {
 		// send data to backend
 		request.send(data);
 
-		//console.log(current_user_tasks);
+
+		// reset the the priority button back to normal
+		document.getElementById('priority').style.setProperty('background-color','#555');
+		document.getElementById('priority').innerHTML = 'PRIORITY';
 	
 
 	}

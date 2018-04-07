@@ -226,5 +226,18 @@ input  {
 	position: relative;
 	float: left;
 	cursor: pointer;
-
+	text-align: center;
+	color: #818181;
+	font-size: 70px;
+	padding-top: 110px;
+	transition-property: font-size;
+	transition-duration: 0.2s; 
+	
  }
+
+
+ .priorityoption:hover {
+	font-size: 80px;
+	color: #eee
+ }
+
