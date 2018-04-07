@@ -14,11 +14,10 @@ ul li {
 
 	cursor: pointer;
 	position: relative;
-	padding: 12px 8px 12px 40px;
+	padding: 12px 8px 12px 0.1px;
 	background: #eee;
 	font-size: 18px;
 	transition: 0.2s;
-
 	/* make the list items unselectable */
 	/* this just makes sure that the text cannot be accidentally copied */
 	-webkit-user-select: none;
@@ -44,7 +43,7 @@ ul li:hover {
  	text-decoration:  line-through;
   }
 
-ul li.checked::before  {
+/* ul li.checked::before  {
 
 	content: '';
 	position: absolute;
@@ -58,7 +57,7 @@ ul li.checked::before  {
 	width: 7px;
 
 
-}
+} */
 
 /* style the close button */
 .close { 

@@ -93,10 +93,25 @@ function newElement() {
 	// create a new list element
 	var li = document.createElement("li");
 	// get the value of the input
-	var inputValue = document.getElementById("myInput").value;
+	var inputValue =  document.getElementById("myInput").value;
+	var displayValue = document.createElement("div")
 	// get the date selected by the user
 	var selected_date = document.getElementById("calendar").getAttribute("date-value");
 
+	//create a span element to indicate the color coded priority
+	var priority_span = document.createElement("SPAN");
+	priority_span.style.setProperty('background-color', priority_options[priority_setting-1].style.getPropertyValue('background-color'));
+	priority_span.style.setProperty('padding','14px 15px 14px 35px');
+	priority_span.style.setProperty('top','0');
+	priority_span.style.setProperty('left','0');
+	li.appendChild(priority_span);
+
+	// create a spacing element to seperate the priority box from the text
+	var spacing_box = document.createElement("SPAN");
+	spacing_box.style.setProperty('background-color', li.style.getPropertyValue('background-color'));
+	spacing_box.style.setProperty('padding', '14px 15px 14px 35px')
+	li.appendChild(spacing_box);
+	
 	//console.log(inputValue);
 	// create a text node with this input
 	var t =  document.createTextNode(inputValue);
@@ -107,6 +122,7 @@ function newElement() {
 		alert("You must write something!")
 	} else {
 		// if the input isnt null, then add this new lisst element to the list of tasks
+	//	document.getElementById('myUL').appendChild(priority_span);
 		document.getElementById("myUL").appendChild(li);
 
 		// create new XMLHttpRequest object
