@@ -15,15 +15,12 @@ ul li {
 	cursor: pointer;
 	position: relative;
 	padding: 12px 8px 12px 0.1px;
-	background: #eee;
+	background-color: #eee;
 	font-size: 18px;
 	transition: 0.2s;
 	/* make the list items unselectable */
 	/* this just makes sure that the text cannot be accidentally copied */
-	-webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+
 
 }
 
@@ -235,10 +232,10 @@ input  {
 
  #timepanel {
 	 background-color: #38BA90;
+	 height: 0px;
 	 width: 100%;
 	 overflow: hidden;
 	 transition: height 0.1s ease-out;
-	 position: relative;
 	 float: left;
  }
 
