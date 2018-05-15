@@ -47,6 +47,7 @@ document.getElementById('calendar')
 			panel.style.setProperty('height','0px');
 		} else {
 			document.getElementById('prioritypanel').style.setProperty('height','0px');
+			document.getElementById('timepanel').style.setProperty('height','0px');
 			panel.style.setProperty('height','313px');
 		}
 });
@@ -58,9 +59,21 @@ document.getElementById('priority').addEventListener("click", function(){
 	 	panel.style.setProperty('height', '0px');
 	} else {
 		document.getElementById('calendarpanel').style.setProperty('height','0px');
+		document.getElementById('timepanel').style.setProperty('height','0px');
 		panel.style.setProperty('height','313px');
 	}
 });
+
+document.getElementById('time').addEventListener("click", function() {
+	var panel = document.getElementById('timepanel');
+	if(panel.style.getPropertyValue('height') != '0px') {
+		panel.style.setProperty('height','0px');
+	} else {
+		document.getElementById('calendarpanel').style.setProperty('height','0px');
+		document.getElementById('prioritypanel').style.setProperty('height','0px');
+		panel.style.setProperty('height','313px')
+	}
+})
 
 
 // make the priority boxes sectable and priority settable

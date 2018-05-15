@@ -41,7 +41,10 @@ app.post('/addTask', (req, res)=>{
 	
 	// print the task entered into the log
 	//console.log(req.body.task);
-	console.log(req.body);
+	//console.log(req.body);
+	//console.log(req.body.task);
+	console.log(req.body.date);
+	console.log(req.body.priority);
 
 	// add the post into the database
 	let sql = 'INSERT INTO frontend_tasks (task,datestring,priority) VALUES (\"'+req.body.task+'\",\"'+req.body.date+'\",'+

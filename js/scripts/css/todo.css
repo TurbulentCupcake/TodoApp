@@ -199,6 +199,20 @@ input  {
 	
 }
 
+#time.accordion {
+	background-color: #818181;
+	color: #555;
+	cursor: pointer;
+	text-align: center;
+	color: #f1f1f1;
+	padding: 10px;
+	position: relative;
+	font-size: 16px;
+	width :5%;
+	top: 0px;
+	float: left;
+}
+
 
  #calendarpanel {
 	/* padding:0 18px; */
@@ -219,6 +233,15 @@ input  {
 	 float: left;
  }
 
+ #timepanel {
+	 background-color: #38BA90;
+	 width: 100%;
+	 overflow: hidden;
+	 transition: height 0.1s ease-out;
+	 position: relative;
+	 float: left;
+ }
+
  .priorityoption {
 
 	height: 313px;
@@ -235,9 +258,24 @@ input  {
 	
  }
 
-
  .priorityoption:hover {
 	font-size: 80px;
 	color: #eee
  }
 
+ .timeoption {
+	 height: 313px;
+	 width: 50%;
+	 position: relative;
+	 float: left;
+	 text-align: center;
+	 cursor: pointer;
+ }
+
+ #hour_input {
+	 width: 17%;
+	 font-size: 100px;
+	 margin-left: 40%;
+	 margin-right: 40%;
+	 margin-top: 5%;
+ }
