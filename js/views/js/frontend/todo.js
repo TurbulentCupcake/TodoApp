@@ -103,7 +103,7 @@ function newElement() {
 	var displayValue = document.createElement("div")
 	// get the date selected by the user
 	var selected_date = document.getElementById("calendar").getAttribute("date-value");
-
+	console.log(document.getElementById('duetime').value);
 	//create a span element to indicate the color coded priority
 	var priority_span = document.createElement("SPAN");
 	priority_span.style.setProperty('background-color', priority_options[priority_setting-1].style.getPropertyValue('background-color'));

@@ -1,0 +1,3 @@
+###################### Improvement Plans ####################
+1. use tries instead of trying to having individual if statements
+2. Would it be a good idea to build user independent word tries?

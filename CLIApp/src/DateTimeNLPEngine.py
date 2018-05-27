@@ -69,5 +69,23 @@ class DateTimeNLPEngine:
             
             if duedate is None and words[i] in time_dict.keys():
                 duedate = time_dict[words[i]]
+        
+        return duedate
+    
+    def parseForPriority(self):
+        "Returns a priority number depending on the word in context"
+        words = self.taskObj_str.split(" ")
+
+        priority_dict = { 
+            "soon":2,
+            "later":4,
+            "asap":1,
+            "ASAP":1,
+            "Asap":1
+        }
+
+        for w in words:
+            if w in priority_dict.keys():
+                return priority_dict[w]
 
 
