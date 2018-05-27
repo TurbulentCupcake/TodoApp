@@ -1,6 +1,7 @@
 from TaskObject import TaskObject
+from DateTimeNLPEngine import DateTimeNLPEngine
+
 
 if __name__ == "__main__":
-    task = TaskObject("Complete the homework on tues")
-    task.parseForTime()
-    task.printTask()
+    taskObj = TaskObject("This is due on tuesday")
+    DateTimeNLPEngine(taskObj.task).printString()
