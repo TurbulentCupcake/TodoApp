@@ -17,9 +17,6 @@ class Node:
     def __getitem__(self, childWord):
         return self.children[childWord]
 
-    def buildLexiconTree(self):
-        "this function is used to build a tree for "
-        
 
 
  
