@@ -1,0 +1,62 @@
+yesterday
+today
+tomorrow
+next week
+next monday
+next tuesday
+next wednesday
+next thursday
+next friday
+next saturday
+next sunday
+next month
+next year
+in a week
+in a month
+in a year
+following week
+following month
+following year
+following monday
+following tuesday
+following wednesday
+following thursday
+following friday
+following saturday
+following sunday
+monday
+tuesday
+wednesday
+thursday
+friday
+saturday
+sunday
+soon
+later
+asap
+Asap
+ASAP
+mon
+Mon
+tues
+Tues
+tue
+Tue
+Thurs
+thu
+thurs
+Fri
+fri
+Monday
+Tuesday
+Wednesday
+Thursday
+Friday
+Saturday
+Sunday
+at the end of the week
+at the end of the month
+at the end of the year
+fortnight
+day after
+tonight

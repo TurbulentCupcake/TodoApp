@@ -88,4 +88,14 @@ class DateTimeNLPEngine:
             if w in priority_dict.keys():
                 return priority_dict[w]
 
+    def parseStringTask(self):
+        """Parses only a single string that gives the task,
+        It is expected that the string in this task will 
+        contain both lexicons for due date and priority of task
+        """
+        
+        
+
+        
+
 
